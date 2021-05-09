@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Entities\Concrete\" />
+    <Folder Include="DataAccess\EntityFramework\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Utilities\Results\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Aspects\" />
+    <Folder Include="Aspects\Autofac\" />
+    <Folder Include="Aspects\Autofac\Security\" />
+    <Folder Include="Utilities\IoC\" />
+    <Folder Include="DependencyResolvers\" />
+    <Folder Include="Aspects\Autofac\Validation\" />
+    <Folder Include="CrossCuttingConcerns\" />
+    <Folder Include="CrossCuttingConcerns\Validation\" />
+    <Folder Include="CrossCuttingConcerns\Validation\FluentValidation\" />
+    <Folder Include="Aspects\Autofac\Transaction\" />
+    <Folder Include="Aspects\Autofac\Performance\" />
+    <Folder Include="Aspects\Autofac\Caching\" />
+    <Folder Include="Aspects\Autofac\Logging\" />
+    <Folder Include="Aspects\Autofac\Exception\" />
+    <Folder Include="Utilities\Business\" />
+    <Folder Include="Utilities\Mail\" />
+    <Folder Include="Utilities\Mail\SMTP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.6.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="5.0.0" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="log4net" Version="2.0.12" />
+    <PackageReference Include="MySql.Data" Version="8.0.11" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,96 @@
+﻿@model WebUI.Models.Account.AccountViewModel
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<div class="container">
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Register</div>
+            </div>
+            <div style="padding-top:30px" class="panel-body">
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                <form asp-controller="Account" asp-action="Register" method="post" class="form-horizontal" role="form">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="userForRegisterDto.Email" class="form-control" placeholder="email">
+                        @*<span asp-validation-for="userForRegisterDto.Email" class="text-danger"></span>*@
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input asp-for="userForRegisterDto.Password" class="form-control" placeholder="password">
+                        @*<span asp-validation-for="userForRegisterDto.Password" class="text-danger"></span>*@
+                    </div>
+
+
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="@Model.userForRegisterDto.PhoneNumber" class="form-control" placeholder="phone number">
+                        @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="@Model.userForRegisterDto.City" class="form-control" placeholder="City">
+                        @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="@Model.userForRegisterDto.Adresse" class="form-control" placeholder="Adresse">
+                        @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="@Model.userForRegisterDto.Picture" class="form-control" placeholder="Picture">
+                        @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="@Model.userForRegisterDto.Birthday" type="date" class="form-control" placeholder="Birthday">
+                        @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <select class="form-control" asp-for="@Model.userForRegisterDto.Gender">
+                            <option value="0">Select</option>
+                            <option value="1">Male</option>
+                            <option value="2">FeMale</option>
+                        </select>
+                        @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                    </div>
+
+
+                    <div style="margin-top:10px" class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls">
+                            <input type="submit" class="btn btn-success" value="Register">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                Have an Account!
+                                <a asp-controller="Account" asp-action="Login">
+                                    Login
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@model WebUI.Models.Member.MemberViewModel
+
+@{
+    ViewData["Title"] = "Member Page";
+}
+
+<div class="row" style="margin-top:10px;">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("MemberMenu")
+    </div>
+    <div class="col-md-9">
+
+        <img style="height: 120px; width: 80px; display: block;" src="@(Model.User.Picture==null?Href("~/images/UserPicture/simpleuser.png"):Model.User.Picture) " alt="User image">
+
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-bordered table-striped" style="margin-top:10px;">
+                    <tr>
+                        <th>User Name</th>
+                        <td>@Model.User.UserName</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>@Model.User.Email</td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <td>@Model.User.PhoneNumber</td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>@Model.User.City</td>
+                    </tr>
+                    <tr>
+                        <th>Adress</th>
+                        <td>@Model.User.Adresse</td>
+                    </tr>
+                    <tr>
+                        <th>Photo</th>
+                        <td>@Model.User.Picture</td>
+                    </tr>
+                    <tr>
+                        <th>Birthday</th>
+                      
+                        <td>@Model.User.Birthday?.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        @if (Model.User.Gender == 1)
+                        {<td>Male</td>}
+                        else if (Model.User.Gender == 2)
+                        { <td>Female</td>}
+                        else {<td>-</td> }
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

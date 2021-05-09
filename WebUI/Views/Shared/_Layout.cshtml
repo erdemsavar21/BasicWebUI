@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootswatch.css" rel="stylesheet" />
+    <link href="~/lib/site.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="myNavbar">
+            <div class="container-fluid">
+                <a href="@Url.Action("index","home")" class="navbar-brand">
+                    <!-- Logo Image -->
+                    <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+                    <!-- Logo Text -->
+                    <span class="text-uppercase font-weight-bold">E.S</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link active" aria-current="page" href="@Url.Action("index","home")">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("login","Account")">Anmelden</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("register","Account")">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index","Admin")" tabindex="-1" aria-disabled="false">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index","Member")" tabindex="-1" aria-disabled="false">Member</a>
+                        </li>
+
+
+                        <li class="nav-item px-4 dropdown">
+                            <!-- we will put our "Services" mega menu in here -->
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="servicesDropdown">
+                                <a class="dropdown-item" href="#">What we do</a>
+                                <a class="dropdown-item" href="#">How we fit your needs</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="d-md-flex align-items-start justify-content-start">
+                                    <div>
+                                        <div class="dropdown-header">Development</div>
+                                        <a class="dropdown-item" href="#">Bespoke software</a>
+                                        <a class="dropdown-item" href="#">Mobile apps</a>
+                                        <a class="dropdown-item" href="#">Websites</a>
+                                    </div>
+                                    <div>
+                                        <div class="dropdown-header">Professional Services</div>
+                                        <a class="dropdown-item" href="#">Project rescue</a>
+                                        <a class="dropdown-item" href="#">Source code recovery</a>
+                                        <a class="dropdown-item" href="#">Application support &amp; maintenance</a>
+                                    </div>
+                                    <div>
+                                        <div class="dropdown-header">Fixed Price Services</div>
+                                        <a class="dropdown-item" href="#">Add cookie consent</a>
+                                        <a class="dropdown-item" href="#">Add captcha</a>
+                                        <a class="dropdown-item" href="#">Add core data</a>
+                                        <a class="dropdown-item" href="#">Custom error pages</a>
+                                        <a class="dropdown-item" href="#">Contact form creation</a>
+                                        <a class="dropdown-item" href="#">Automated backups</a>
+                                        <a class="dropdown-item" href="#">Image to HTML</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        @if (TempData["message"] != null)
+        {
+
+            <div class="alert alert-info" style="text-align:center;">
+
+                <strong>@TempData["message"]</strong>
+            </div>
+        }
+        @RenderBody()
+    </div>
+
+    @*<div class="container body-content">
+            @{ Html.RenderPartial("_Alerts"); }
+            <partial name="_Alerts.cshtml">
+
+                @RenderBody()
+        </div>*@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

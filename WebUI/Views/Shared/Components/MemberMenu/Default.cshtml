@@ -1,0 +1,40 @@
+﻿@model WebUI.Models.Member.MemberViewModel
+@functions{
+    public string GetActiveView(string divId)
+    {
+        string css = "list-group-item list-group-item-action";
+        if (divId==Model.CurrentView)
+        {
+            css += " active";
+        }
+
+        return css;
+    }
+}
+<div class="list-group">
+    <a href="/member/index/" class="@GetActiveView("Index")">
+        Summary
+    </a>
+
+</div>
+
+<div class="list-group">
+    <a href="/member/PasswordChange/" class="@GetActiveView("PasswordChange")">
+        Password Change
+    </a>
+
+</div>
+
+<div class="list-group">
+    <a href="/member/UpdateUserInfo/" class="@GetActiveView("UpdateUserInfo")">
+        Update Info
+    </a>
+
+</div>
+
+<div class="list-group">
+    <a asp-action="Logout" asp-controller="Member" class="@GetActiveView("Logout")" asp-route-returnUrl="/Home/">
+        <b style="color:red;"> LogOut </b>
+    </a>
+
+</div>

@@ -1,0 +1,41 @@
+﻿
+@model WebUI.Models.UserModel.UserListViewModel
+
+@{
+    ViewData["Title"] = "User";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<div class="container">
+<div class="row">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>User Id</td>
+            <td>User Name</td>
+            <td>Email</td>
+            <td>PhoneNumber</td>
+            <td></td>
+        </tr>
+        @if (Model.Users.Count == 0)
+        {
+            <tr>
+                <td colspan="3">Hic bir üye yoktur</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@user.PhoneNumber</td>
+                    <td class="text-right"><a class="btn btn-xs btn-primary" asp-controller="Admin" asp-action="RoleAssign" asp-route-userId="@user.Id">Add Role</a></td>
+                </tr>
+            }
+        }
+    </table>
+
+</div>
+</div>

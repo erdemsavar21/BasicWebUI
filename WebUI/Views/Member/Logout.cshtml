@@ -1,0 +1,12 @@
+﻿@model WebUI.Models.Member.MemberViewModel
+
+@{
+    ViewData["Title"] = "Member Page";
+}
+
+<div class="row" style="margin-top:10px;">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("MemberMenu")
+    </div>
+    
+</div>

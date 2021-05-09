@@ -1,0 +1,112 @@
+﻿@model WebUI.Models.Member.MemberViewModel
+
+@{
+    ViewData["Title"] = "Member Page";
+}
+
+<div class="row" style="margin-top:10px;">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("MemberMenu")
+    </div>
+    <div class="col-md-9">
+        <div class="container">
+            <div id="loginbox" style="margin-top:10px;" class="mainbox col-md-6">
+                <div class="panel panel-info">
+
+                    <div style="padding-top:10px" class="panel-body">
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                        <form asp-controller="Member" asp-action="UpdateUserInfo" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div style="margin-top: 10px" class="input-group">
+                                <label asp-for="User.UserName">User Name</label>
+                            </div>
+                            <div style="margin-top: 5px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input asp-for="User.UserName" class="form-control" placeholder="username">
+                                @*<span asp-validation-for="userForRegisterDto.Email" class="text-danger"></span>*@
+                            </div>
+
+                            <div style="margin-top: 20px" class="input-group">
+                                <label asp-for="User.PhoneNumber"></label>
+                            </div>
+                            <div style="margin-top: 5px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                <input asp-for="User.PhoneNumber" class="form-control" placeholder="phone number">
+                                @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                            </div>
+                            <div style="margin-top: 20px" class="input-group">
+                                <label asp-for="User.Birthday"></label>
+                            </div>
+                            <div style="margin-top: 5px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                <input asp-for="User.Birthday" type="date" class="form-control" placeholder="Birthday">
+                                @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                            </div>
+
+                            <div style="margin-top: 20px" class="input-group">
+                                <label asp-for="User.Adresse"></label>
+                            </div>
+                            <div style="margin-top: 5px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                <input asp-for="User.Adresse" class="form-control" placeholder="Adress">
+                                @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                            </div>
+
+                            <div style="margin-top: 20px" class="input-group">
+                                <label asp-for="User.Gender"></label>
+                            </div>
+                            <div style="margin-top: 5px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                @*<input asp-for="User.Gender" class="form-control" placeholder="Gender">*@
+
+                                <select class="form-control" asp-for="User.Gender">
+                                    <option value="0">
+                                    </option>
+                                    <option value="1">Male</option>
+                                    <option value="2">FeMale</option>
+                                </select>
+
+                                @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                            </div>
+                            <div style="margin-top: 20px" class="input-group">
+                                <label asp-for="User.Picture"></label>
+                            </div>
+                            <div style="margin-top: 5px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                <input name="userPicture" type="file" class="form-control-file" placeholder="Picture">
+                                @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                            </div>
+                            <div style="margin-top: 20px" class="input-group">
+                                <label asp-for="User.City"></label>
+                            </div>
+                            <div style="margin-top: 5px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                <input asp-for="User.City" class="form-control" placeholder="City">
+                                @*<span asp-validation-for="userForRegisterDto.PhoneNumber" class="text-danger"></span>*@
+                            </div>
+                            <input asp-for="User.Email" type="hidden" />
+                            <input asp-for="User.Picture" type="hidden" />
+                            <div style="margin-top:10px" class="form-group">
+                                <!-- Button -->
+                                <div class="col-sm-12 controls">
+                                    <input type="submit" class="btn btn-success" value="Update">
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
